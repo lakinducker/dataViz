@@ -1,7 +1,3 @@
 .idea
-<<<<<<< HEAD
 lib
-.DS_Store
-=======
 lib/*
->>>>>>> e8175dbdbb39b75266fa02934b3587fee93955fe
