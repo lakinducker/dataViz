@@ -1,0 +1,21 @@
+<!-- Tab Nav Bar --->
+<ng-include src=" 'app/shared/tabNavBar.html' "></ng-include>
+
+<div class="col-md-12 display-area-left">
+
+    <h1>System Charts</h1>
+
+    <ul>
+        <li><a ui-sref="cumulativeChart"><i class="fa fa-line-chart"></i> System Usage by User</a></li>
+        <li><a ui-sref="lineChart"><i class="fa fa-line-chart"></i>  Jobs in the Past 90 Days by Type (Line Chart)</a></li>
+        <li><a ui-sref="multiBarChart"><i class="fa fa-bar-chart"></i> Jobs in the Past 90 Days by Type (Bar Chart)</a></li>
+        <li><a ui-sref="lineFocusChart"><i class="fa fa-line-chart"></i> Jobs in Past 90 Days by Status</a></li>
+        <li><a ui-sref="historicalBarChart"><i class="fa fa-area-chart"></i> Average Batch Size Over Time</a></li>
+        <li><a ui-sref="histogramChart"><i class="fa fa-bar-chart"></i> Histogram of Batch Sizes</a></li>
+    </ul>
+
+</div>
+
+<!--<div class="col-md-4 display-area-right">-->
+    <!--<ng-include src=" 'app/shared/systemStatus.html' "></ng-include>-->
+<!--</div>-->
