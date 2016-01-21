@@ -153,7 +153,6 @@
                     controller: "LineCurveChartCtrl",
                     controllerAs: 'vm'
                 })
-<<<<<<< HEAD
                 // Donut Chart
                 .state("donutChart", {
                     url: "/donut",
@@ -168,8 +167,6 @@
                     controller: "PolarChartCtrl",
                     controllerAs: 'vm'
                 })
-=======
->>>>>>> e8175dbdbb39b75266fa02934b3587fee93955fe
         }]
     );
 
