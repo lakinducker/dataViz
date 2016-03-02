@@ -8,15 +8,20 @@
             'ui.router',
             'ui.bootstrap',
             'ngMessages',
-            'nvd3'
+            'nvd3',
+            'ui-leaflet',
+            'highcharts-ng',
+            'datamaps',
+            'rzModule',
+            'googlechart',
+            'angular-dimple'
         ]);
 
     app.config(['$stateProvider',
-        '$urlRouterProvider',
+            '$urlRouterProvider',
+            'highchartsNGProvider',
         function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/');
-
-            console.log('test');
 
             $stateProvider
 
@@ -62,6 +67,17 @@
                         }
                     }
                 })
+
+
+
+                // High Line Chart
+                .state("highLineChart", {
+                    url: "/",
+                    templateUrl: "app/charts/highLineChart.html",
+                    controller: "HighLineChartCtrl",
+                    controllerAs: 'vm'
+                })
+
                 // Line Chart
                 .state("lineChart", {
                     url: "/line",
@@ -71,7 +87,7 @@
                 })
                 // Cumulative Line Chart
                 .state("cumulativeChart", {
-                    url: "/",
+                    url: "/cumulative",
                     templateUrl: "app/charts/cumulativeChart.html",
                     controller: "CumulativeChartCtrl",
                     controllerAs: 'vm'
@@ -160,6 +176,7 @@
                     controller: "DonutChartCtrl",
                     controllerAs: 'vm'
                 })
+
                 // Polar Chart
                 .state("polarChart", {
                     url: "/polar",
@@ -167,6 +184,138 @@
                     controller: "PolarChartCtrl",
                     controllerAs: 'vm'
                 })
+
+                // Side Bar Chart
+                .state("sideBarChart", {
+                    url: "/sideBar",
+                    templateUrl: "app/charts/sideBarChart.html",
+                    controller: "SideBarChartCtrl",
+                    controllerAs: 'vm'
+                })
+
+                // Realtime Linear Chart
+                .state("realtimeLinearChart", {
+                    url: "/realtime-linear",
+                    templateUrl: "app/charts/realtimeLinearChart.html",
+                    controller: "RealtimeLinearChartCtrl",
+                    controllerAs: 'vm'
+                })
+
+                // Realtime Donut Chart
+                .state("realtimeDonutChart", {
+                    url: "/realtime-donut",
+                    templateUrl: "app/charts/realtimeDonutChart.html",
+                    controller: "RealtimeDonutChartCtrl",
+                    controllerAs: 'vm'
+                })
+
+                // Scatter Chart
+                .state("scatterChart", {
+                    url: "/scatter",
+                    templateUrl: "app/charts/scatterChart.html",
+                    controller: "ScatterChartCtrl",
+                    controllerAs: 'vm'
+                })
+
+                // Scatter Chart
+                .state("scatterLineChart", {
+                  url: "/scatter-line",
+                  templateUrl: "app/charts/scatterLineChart.html",
+                  controller: "ScatterLineChartCtrl",
+                  controllerAs: 'vm'
+                })
+
+                // Risk and Return Chart
+                .state("riskReturn", {
+                  url: "/risk-return",
+                  templateUrl: "app/charts/riskReturnChart.html",
+                  controller: "RiskReturnChartCtrl",
+                  controllerAs: 'vm'
+                })
+
+                // Candlestick Chart
+                .state("candlestick", {
+                  url: "/candlestick",
+                  templateUrl: "app/charts/candlestickChart.html",
+                  controller: "CandlestickChartCtrl",
+                  controllerAs: 'vm'
+                })
+
+                // Realtime Bar Chart
+                .state("realtimeBar", {
+                  url: "/realtime-bar",
+                  templateUrl: "app/charts/realtimeBarChart.html",
+                  controller: "RealtimeBarChartCtrl",
+                  controllerAs: 'vm'
+                })
+
+                // Highlight Points Chart
+                .state("highlightPoints", {
+                  url: "/highlight-points",
+                  templateUrl: "app/charts/highlightPointsChart.html",
+                  controller: "HighlightPointsChartCtrl",
+                  controllerAs: 'vm'
+                })
+
+                // High Scatter Chart
+                .state("highScatter", {
+                  url: "/high-scatter",
+                  templateUrl: "app/charts/highScatterChart.html",
+                  controller: "HighScatterChartCtrl",
+                  controllerAs: 'vm'
+                })
+
+                // Gauge Chart
+                .state("gauge", {
+                  url: "/gauge",
+                  templateUrl: "app/charts/gaugeChart.html",
+                  controller: "GaugeChartCtrl",
+                  controllerAs: 'vm'
+                })
+
+                // Dimple Line Chart
+                .state("dimpleLine", {
+                  url: "/dimple-line",
+                  templateUrl: "app/charts/dimpleLineChart.html",
+                  controller: "DimpleLineChartCtrl",
+                  controllerAs: 'vm'
+                })
+
+
+                // Map
+                .state("map", {
+                    url: "/map",
+                    templateUrl: "app/maps/map.html",
+                    controller: "MapCtrl",
+                    controllerAs: 'vm'
+                })
+
+                // DataMap
+                .state("dataMap", {
+                    url: "/data-map",
+                    templateUrl: "app/maps/dataMap.html",
+                    controller: "DataMapCtrl",
+                    controllerAs: 'vm'
+                })
+
+                // DataMap
+                .state("dataMapWorld", {
+                    url: "/data-map-world",
+                    templateUrl: "app/maps/dataMapWorld.html",
+                    controller: "DataMapWorldCtrl",
+                    controllerAs: 'vm'
+                })
+
+                // 3D
+                .state("3d", {
+                  url: "/3d",
+                  templateUrl: "app/3d/webgl.html",
+                  controller: "WebglCtrl",
+                  controllerAs: 'vm'
+                })
+
+
+
         }]
     );
 

@@ -64,5 +64,7 @@
       }
     ];
 
+    console.log(JSON.stringify($scope.data));
+
   }
 }());

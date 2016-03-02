@@ -1,3 +1,58 @@
 body {
     padding-top: 65px;
 }
+
+.axis path,
+.axis line{
+    fill: none;
+    stroke:black;
+    shape-rendering:crispEdge;
+}
+
+.axis text{
+    font-family: sans-serif;
+    font-size: 8px;
+}
+
+h1{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.tick
+{
+    stroke-dasharray: 1, 2;
+}
+
+
+
+.test {
+    color: #1f5810;
+}
+
+
+
+.colordvaline {
+    height: 15px;
+    width: 10px;
+}
+
+
+.hightlight {
+    color: red;
+}
+
+
+
+/* for highlightPointsChart */
+.dashed {
+    stroke-dasharray: 5,5;
+}
+
+.nvd3.nv-scatter .nv-groups .nv-point.hover,
+.nvd3 .nv-groups .nv-point.hover {
+    stroke-width: 20px !important;
+    fill-opacity: .5 !important;
+    stroke-opacity: .5 !important;
+}

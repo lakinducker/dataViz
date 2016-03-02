@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>Data Visualiztion</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Data Visualization">
+    <meta name="author" content="Lakin Ducker">
+
+    <title>Data Visualization</title>
 
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -12,6 +17,9 @@
     <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="lib/nvd3/build/nv.d3.min.css" />
     <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="lib/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="lib/angularjs-slider/dist/rzslider.css">
+    <link rel="stylesheet" href="lib/animate.css/animate.min.css">
     <link rel="stylesheet" href="css/site.css">
 
 </head>
@@ -32,38 +40,54 @@
                 <ul class="nav navbar-nav">
 
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">System Charts<span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Line Charts<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a ui-sref="lineChart"><i class="fa fa-line-chart"></i>  Jobs in the Past 90 Days by Type (Line Chart)</a></li>
-                            <li><a ui-sref="multiBarChart"><i class="fa fa-bar-chart"></i> Jobs in the Past 90 Days by Type (Bar Chart)</a></li>
                             <li><a ui-sref="lineFocusChart"><i class="fa fa-line-chart"></i> Jobs in Past 90 Days by Status</a></li>
-                            <li><a ui-sref="donutChart"><i class="fa fa-pie-chart"></i> Donut Chart of Jobs</a></li>
-                            <li><a ui-sref="polarChart"><i class="fa fa-pie-chart"></i> Polar Area Chart of Jobs</a></li>
-                            <li><a ui-sref="historicalBarChart"><i class="fa fa-area-chart"></i> Average Batch Size Over Time</a></li>
-                            <li><a ui-sref="radarChart"><i class="fa fa-pie-chart"></i> Radar Chart of Jobs</a></li>
-                            <li><a ui-sref="histogramChart"><i class="fa fa-bar-chart"></i> Histogram of Batch Sizes</a></li>
-                            <li><a ui-sref="cumulativeChart"><i class="fa fa-line-chart"></i> System Usage by User</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Project Charts<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a ui-sref="rawFileChart"><i class="fa fa-pie-chart"></i> Project Raw File Extensions Pie Chart</a></li>
-                            <li><a ui-sref="pieChart"><i class="fa fa-pie-chart"></i> Project Pie Chart of Batches by Custodian</a></li>
-                            <li><a ui-sref="stackedAreaChart"><i class="fa fa-area-chart"></i> Average Project Batch File Size by Custodian</a></li>
-                            <li><a ui-sref="boxPlotChart"><i class="fa fa-bar-chart"></i> Box Plot of Project Batch Parent Counts</a></li>
-                            <li><a ui-sref="histogramChart"><i class="fa fa-bar-chart"></i> Histogram of Project Batch Sizes</a></li>
-                            <li><a ui-sref="lineChart"><i class="fa fa-line-chart"></i> Project Jobs in the Past 90 Days by Type (Line Chart)</a></li>
-                            <li><a ui-sref="multiBarChart"><i class="fa fa-bar-chart"></i> Project Jobs in the Past 90 Days by Type (Bar Chart)</a></li>
-                            <li><a ui-sref="lineFocusChart"><i class="fa fa-line-chart"></i> Project Jobs in Past 90 Days by Status</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Batch Charts<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a ui-sref="discreetBarChart"><i class="fa fa-bar-chart"></i> Batch PostSearch Counts</a></li>
-                            <li><a ui-sref="rawFileChart"><i class="fa fa-pie-chart"></i> Batch Raw File Extensions Pie Chart</a></li>
+                            <li><a ui-sref="realtimeLinearChart"><i class="fa fa-line-chart"></i> Realtime Line Chart of System Usage</a></li>
+                            <li><a ui-sref="lineChart"><i class="fa fa-line-chart"></i>  Jobs in the Past 90 Days by Type (Line Chart)</a></li>
                             <li><a ui-sref="lineCurveChart"><i class="fa fa-line-chart"></i> Line Chart</a></li>
+                            <li><a ui-sref="stackedAreaChart"><i class="fa fa-area-chart"></i> Average Project Batch File Size by Custodian</a></li>
+                            <li><a ui-sref="lineChart"><i class="fa fa-line-chart"></i> Project Jobs in the Past 90 Days by Type (Line Chart)</a></li>
+                            <li><a ui-sref="cumulativeChart"><i class="fa fa-line-chart"></i> System Usage by Job Type</a></li>
+                            <li><a ui-sref="highlightPoints"><i class="fa fa-line-chart"></i> Highlight System UsageHighlight System Usage Over 250</a></li>
+                            <li><a ui-sref="dimpleLine"><i class="fa fa-line-chart"></i> Sales</a></li>
+                            <li><a ui-sref="highLineChart"><i class="fa fa-line-chart"></i> Client Jobs in the Past 90 Days</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bar Charts<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a ui-sref="realtimeBar"><i class="fa fa-bar-chart"></i> Jobs Currently Running (Real-Time)</a></li>
+                            <li><a ui-sref="multiBarChart"><i class="fa fa-bar-chart"></i> Project Jobs in the Past 90 Days by Type (Bar Chart)</a></li>
+                            <li><a ui-sref="discreetBarChart"><i class="fa fa-bar-chart"></i> Batch PostSearch Counts</a></li>
+                            <li><a ui-sref="sideBarChart"><i class="fa fa-bar-chart"></i> Side Bar Chart</a></li>
+                            <li><a ui-sref="histogramChart"><i class="fa fa-bar-chart"></i> Histogram of Batch Sizes</a></li>
+                            <li><a ui-sref="historicalBarChart"><i class="fa fa-bar-chart"></i> Average Batch Size Over Time</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other Charts<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a ui-sref="donutChart"><i class="fa fa-pie-chart"></i> Donut Chart of Jobs</a></li>
+                            <li><a ui-sref="radarChart"><i class="fa fa-pie-chart"></i> Radar Chart of Jobs</a></li>
+                            <li><a ui-sref="polarChart"><i class="fa fa-pie-chart"></i> Polar Area Chart of Jobs</a></li>
+                            <li><a ui-sref="realtimeDonutChart"><i class="fa fa-pie-chart"></i> Real-time Donut Chart of System Processes</a></li>
+                            <li><a ui-sref="gauge"><i class="fa fa-pie-chart"></i> Real-time Gauge Chart</a></li>
+                            <li><a ui-sref="candlestick"><i class="fa fa-bar-chart"></i> Candlestick Chart</a></li>
+                            <li><a ui-sref="scatterChart"><i class="fa fa-pie-chart"></i> Scatter Chart</a></li>
+                            <li><a ui-sref="scatterLineChart"><i class="fa fa-pie-chart"></i> Scatter Chart with Trend Lines</a></li>
+                            <li><a ui-sref="rawFileChart"><i class="fa fa-pie-chart"></i> Project Raw File Extensions Pie Chart</a></li>
+                            <li><a ui-sref="boxPlotChart"><i class="fa fa-bar-chart"></i> Box Plot of Project Batch Parent Counts</a></li>
+                            <li><a ui-sref="pieChart"><i class="fa fa-pie-chart"></i> Project Pie Chart of Batches by Custodian</a></li>
+                            <li><a ui-sref="3d"><i class="fa fa-pie-chart"></i> 3D</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Maps<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a ui-sref="map"><i class="fa fa-globe"></i> Realtime Map of Recent Jobs</a></li>
+                            <li><a ui-sref="dataMap"><i class="fa fa-globe"></i> USA Sales Map</a></li>
+                            <li><a ui-sref="dataMapWorld"><i class="fa fa-globe"></i> World Sales Map</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -84,8 +108,11 @@
     <!-- Library Scripts -->
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/leaflet/dist/leaflet.js"></script>
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="lib/angular-simple-logger/dist/angular-simple-logger.js"></script>
+    <script src="lib/ui-leaflet/dist/ui-leaflet_dev_mapped.js"></script>
     <script src="lib/Chart.js/Chart.min.js"></script>
     <script src="lib/angular-chart.js/dist/angular-chart.min.js"></script>
     <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -95,6 +122,18 @@
     <script src="lib/nvd3/build/nv.d3.js"></script> <!-- or use another assembly -->
     <script src="lib/angular-nvd3/dist/angular-nvd3.js"></script>
     <script src="lib/moment/min/moment.min.js"></script>
+    <script src="http://code.highcharts.com/stock/highstock.src.js"></script>
+    <script src="lib/highcharts-ng/dist/highcharts-ng.js"></script>
+    <script src="lib/topojson/topojson.js" charset="utf-8"></script>
+    <script src="lib/datamaps/dist/datamaps.all.js" charset="utf-8"></script>
+    <script src="lib/angular-datamaps/dist/angular-datamaps.js" charset="utf-8"></script>
+    <script src="lib/angularjs-slider/dist/rzslider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-chart/0.1.0/ng-google-chart.min.js" type="text/javascript"></script>
+    <script src="lib/angular-google-chart/ng-google-chart.min.js"></script>
+    <script src="lib/three.js/three.min.js"></script>
+    <script src="lib/dimple/dist/dimple.v2.1.0.min.js"></script>
+    <script src="lib/angular-dimple/dist/angular-dimple.min.js"></script>
+
 
     <!-- Application Script -->
     <script src="app/app.js"></script>
@@ -117,6 +156,27 @@
     <script src="app/charts/lineCurveChartCtrl.js"></script>
     <script src="app/charts/donutChartCtrl.js"></script>
     <script src="app/charts/polarChartCtrl.js"></script>
+    <script src="app/charts/highLineChartCtrl.js"></script>
+    <script src="app/charts/sideBarChartCtrl.js"></script>
+    <script src="app/charts/realtimeLinearChartCtrl.js"></script>
+    <script src="app/charts/realtimeDonutChartCtrl.js"></script>
+    <script src="app/charts/scatterChartCtrl.js"></script>
+    <script src="app/charts/scatterLineChartCtrl.js"></script>
+    <script src="app/charts/riskReturnChartCtrl.js"></script>
+    <script src="app/charts/candlestickChartCtrl.js"></script>
+    <script src="app/charts/realtimeBarChartCtrl.js"></script>
+    <script src="app/charts/highlightPointsChartCtrl.js"></script>
+    <script src="app/charts/gaugeChartCtrl.js"></script>
+    <script src="app/charts/dimpleLineChartCtrl.js"></script>
+    <script src="app/maps/mapCtrl.js"></script>
+    <script src="app/maps/dataMapCtrl.js"></script>
+    <script src="app/maps/dataMapWorldCtrl.js"></script>
+    <script src="app/3d/webglCtrl.js"></script>
+
+    <!-- Directives -->
+    <script src="common/directives/linear-chart.js"></script>
+    <script src="common/directives/donut-chart.js"></script>
+    <script src="common/directives/ng-webgl.js"></script>
 
 
 </body>

@@ -47,19 +47,15 @@
 
     $scope.data = [
       {
-        key: "Norris, Joe",
+        key: "Processing",
         values: generateData(90)
       },
       {
-        key: "Shorney, Steve",
+        key: "Search",
         values: generateData(90)
       },
       {
-        key: "Wang, James",
-        values: generateData(90)
-      },
-      {
-        key: "Cooper, Bill",
+        key: "Export",
         values: generateData(90)
       }
     ];

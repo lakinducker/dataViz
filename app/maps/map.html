@@ -1,0 +1,19 @@
+<h1>Realtime Locations of Most Recent Job Requests</h1>
+
+<leaflet lf-center="mapCenter" markers="markers" height="460px" width="100%"></leaflet>
+<p>Click pin for details.</p>
+
+<table class="table">
+    <tr>
+        <th>Job</th>
+        <th>Time</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+    </tr>
+    <tr ng-repeat="job in recentJobs | limitTo : 200" class="animated zoomInDown">
+        <td><span ng-class='{hightlight:$first}'>{{job.jobType}}</span></td>
+        <td><span ng-class='{hightlight:$first}'>{{job.dateTime}}</span></td>
+        <td><span ng-class='{hightlight:$first}'>{{job.lat | number : 2}}</span></td>
+        <td><span ng-class='{hightlight:$first}'>{{job.lng | number : 2}}</span></td>
+    </tr>
+</table>
