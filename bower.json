@@ -20,7 +20,6 @@
     "bootstrap": "~3.3.6",
     "angular-bootstrap": "~0.14.3",
     "angular-chart.js": "~0.8.8",
-    "d3": "~3.5.12",
     "nvd3": "~1.8.1",
     "angular-nvd3": "~1.0.5",
     "font-awesome": "~4.5.0",

@@ -58,16 +58,20 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bar Charts<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a ui-sref="realtimeBar"><i class="fa fa-bar-chart"></i> Jobs Currently Running (Real-Time)</a></li>
+                            <li><a ui-sref="divergingBar"><i class="fa fa-bar-chart"></i> Diverging Bar Chart</a></li>
                             <li><a ui-sref="multiBarChart"><i class="fa fa-bar-chart"></i> Project Jobs in the Past 90 Days by Type (Bar Chart)</a></li>
                             <li><a ui-sref="discreetBarChart"><i class="fa fa-bar-chart"></i> Batch PostSearch Counts</a></li>
                             <li><a ui-sref="sideBarChart"><i class="fa fa-bar-chart"></i> Side Bar Chart</a></li>
                             <li><a ui-sref="histogramChart"><i class="fa fa-bar-chart"></i> Histogram of Batch Sizes</a></li>
+                            <li><a ui-sref="objectiveMastery"><i class="fa fa-bar-chart"></i> Objective Mastery</a></li>
                             <li><a ui-sref="historicalBarChart"><i class="fa fa-bar-chart"></i> Average Batch Size Over Time</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other Charts<span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a ui-sref="moleculeDiagram"><i class="fa fa-code-fork"></i> Molecule Diagram</a></li>
+                            <li><a ui-sref="reactions"><i class="fa fa-code-fork"></i> Reactions</a></li>
                             <li><a ui-sref="donutChart"><i class="fa fa-pie-chart"></i> Donut Chart of Jobs</a></li>
                             <li><a ui-sref="radarChart"><i class="fa fa-pie-chart"></i> Radar Chart of Jobs</a></li>
                             <li><a ui-sref="polarChart"><i class="fa fa-pie-chart"></i> Polar Area Chart of Jobs</a></li>
@@ -79,7 +83,6 @@
                             <li><a ui-sref="rawFileChart"><i class="fa fa-pie-chart"></i> Project Raw File Extensions Pie Chart</a></li>
                             <li><a ui-sref="boxPlotChart"><i class="fa fa-bar-chart"></i> Box Plot of Project Batch Parent Counts</a></li>
                             <li><a ui-sref="pieChart"><i class="fa fa-pie-chart"></i> Project Pie Chart of Batches by Custodian</a></li>
-                            <li><a ui-sref="3d"><i class="fa fa-pie-chart"></i> 3D</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -88,6 +91,12 @@
                             <li><a ui-sref="map"><i class="fa fa-globe"></i> Realtime Map of Recent Jobs</a></li>
                             <li><a ui-sref="dataMap"><i class="fa fa-globe"></i> USA Sales Map</a></li>
                             <li><a ui-sref="dataMapWorld"><i class="fa fa-globe"></i> World Sales Map</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">3D<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a ui-sref="3d"><i class="fa fa-pie-chart"></i> WebGL 3D</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -172,11 +181,25 @@
     <script src="app/maps/dataMapCtrl.js"></script>
     <script src="app/maps/dataMapWorldCtrl.js"></script>
     <script src="app/3d/webglCtrl.js"></script>
+    <script src="app/molecules/moleculeDiagramCtrl.js"></script>
+    <script src="app/molecules/reactionsCtrl.js"></script>
+    <script src="app/charts/performanceCtrl.js"></script>
+    <script src="app/charts/divergingBarChartCtrl.js"></script>
+    <script src="app/charts/objectiveMasteryChartCtrl.js"></script>
 
     <!-- Directives -->
     <script src="common/directives/linear-chart.js"></script>
     <script src="common/directives/donut-chart.js"></script>
     <script src="common/directives/ng-webgl.js"></script>
+    <script src="common/directives/molecule-diagram.js"></script>
+    <script src="common/directives/reactions.js"></script>
+    <!--<script src="common/directives/tjsModelViewer.js"></script>-->
+    <script src="common/directives/performanceBreakdown.js"></script>
+
+    <!-- Components -->
+    <script src="common/components/performanceDonutChart.js"></script>
+    <script src="common/components/divergingBarChart.js"></script>
+    <script src="common/components/objectiveMasteryChart.js"></script>
 
 
 </body>

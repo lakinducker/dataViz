@@ -281,6 +281,22 @@
                   controllerAs: 'vm'
                 })
 
+                // Diverging Bar Chart
+                .state("divergingBar", {
+                  url: "/diverging-bar",
+                  templateUrl: "app/charts/divergingBarChart.html",
+                  controller: "DivergingBarChartCtrl",
+                  controllerAs: 'vm'
+                })
+
+                // Objective Mastery Chart
+                .state("objectiveMastery", {
+                  url: "/objective-mastery",
+                  templateUrl: "app/charts/objectiveMasteryChart.html",
+                  controller: "ObjectiveMasteryChartCtrl",
+                  controllerAs: 'vm'
+                })
+
 
                 // Map
                 .state("map", {
@@ -313,6 +329,32 @@
                   controller: "WebglCtrl",
                   controllerAs: 'vm'
                 })
+
+
+
+                // DataMap
+                .state("moleculeDiagram", {
+                  url: "/molecule-diagram",
+                  templateUrl: "app/molecules/moleculeDiagram.html",
+                  controller: "MoleculeDiagramCtrl",
+                  controllerAs: 'vm'
+                })
+
+                .state("reactions", {
+                  url: "/reactions",
+                  templateUrl: "app/molecules/reactions.html",
+                  controller: "ReactionsCtrl",
+                  controllerAs: 'vm'
+                })
+
+
+                //  Chart and Table Integration
+                .state("performance", {
+                  url: "/performance",
+                  templateUrl: "app/charts/performance.html",
+                  controller: "PerformanceCtrl",
+                  controllerAs: 'vm'
+                });
 
 
 
